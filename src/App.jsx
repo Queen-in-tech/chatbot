@@ -6,6 +6,7 @@ import {
   MessageList,
   Message,
   MessageInput,
+  TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 import { useEffect, useState } from "react";
 
@@ -17,8 +18,11 @@ function App() {
       direction: "incoming",
     },
   ]);
+  const [typing, setTyping] = useState(false);
 
   const handleSend = async (message) => {
+    console.log(message);
+    setTyping(true);
     const newMessage = {
       message: message,
       sender: "user",
@@ -26,12 +30,10 @@ function App() {
     };
 
     const newMessages = [...messages, newMessage];
-
     setMessages(newMessages);
-
-    await processMessageToLlama();
   };
   const processMessageToLlama = async () => {
+    console.log(messages);
     const apiMessages = messages.map((messageObj) => {
       return { role: messageObj.sender, content: messageObj.message };
     });
@@ -39,7 +41,7 @@ function App() {
     const url = "http://localhost:11434/api/chat";
     const headers = { "Content-Type": "application/json" };
     const data = {
-      model: "gemma:2b",
+      model: "phi3",
       messages: [...apiMessages],
       stream: false,
     };
@@ -57,19 +59,32 @@ function App() {
       };
       // const newMessages = [...messages, respondObj];
       setMessages((prevMessages) => [...prevMessages, respondObj]);
+      setTyping(false);
     } else {
       console.log("Error:", response.status, response.statusText);
+      setTyping(false);
     }
   };
+  // useEffect(() => {
+  //   console.log(messages);
+  // }, [messages]);
   useEffect(() => {
-    console.log(messages);
-  }, [messages]);
+    if (typing) {
+      processMessageToLlama();
+    }
+  }, [typing]);
   return (
     <div className="relative ">
       <div>
         <MainContainer>
           <ChatContainer>
-            <MessageList>
+            <MessageList
+              typingIndicator={
+                typing ? (
+                  <TypingIndicator content="AI assistant typing" />
+                ) : null
+              }
+            >
               {messages.map((message, i) => (
                 <Message key={i} model={message} />
               ))}
