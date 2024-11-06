@@ -1,0 +1,7 @@
+.nav-list{
+    @apply cursor-pointer hover:text-brown-300 hover:font-bold hover:border-b-[3px] hover:rounded-b-sm hover:border-brown-200 text-xl
+}
+
+button{
+    @apply bg-transparent text-brown-200 py-5 px-10 rounded-lg text-[22px] font-bold hover:text-brown-800 hover:bg-brown-200 border-brown-300 border-[3px] 
+}

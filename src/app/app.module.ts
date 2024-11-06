@@ -3,14 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SabletechComponent } from './ui/view/sabletech/sabletech.component';
+import { HeaderComponent } from './ui/view/sabletech/components/header/header.component';
+import { FooterComponent } from './ui/view/sabletech/components/footer/footer.component';
+import { HeroComponent } from './ui/view/sabletech/components/hero/hero.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SabletechComponent,
+    HeaderComponent,
+    FooterComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
