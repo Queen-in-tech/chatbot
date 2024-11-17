@@ -1,0 +1,867 @@
+
+ [
+    {
+        "abbreviation": "ACOMAT",
+        "fullName": "Ambassador College of Management and Technology",
+        
+            "address": "34 Ogboroama Street, Off 15 Igwuruta Road, Rumuokwurusi, Port-Harcourt, Rivers State, Nigeria.",
+            "tel": ["08032883338", "08037593316", "08108067725", "07050824266"],
+            "website": "www.acmgt.org",
+            "email": "info@acmgt.org"
+        
+    },
+    {
+        "abbreviation": "ACAD-MHE",
+        "fullName": "Academy of Medical Health and Education",
+        
+            "address": "Benue, Benue State"
+        
+    },
+    {
+        "abbreviation": "ACAVATS",
+        "fullName": "African College of Agriculture, Vocational and Technical Studies",
+        
+            "address": "Akure, Ondo State"
+        
+    },
+    {
+        "abbreviation": "ADEYEMI-COT",
+        "fullName": "Adeyemi College of Technology",
+        
+            "address": "Ondo City, Ondo State"
+        
+    },
+    {
+        "abbreviation": "AFLON",
+        "fullName": "AFLON Digital Institute",
+        
+            "address": "Plot 365, Obafemi Awolowo Way, Jabi, P.O.Box 7472 Abuja, FCT-Abuja",
+            "email": "director@aflon.org"
+        
+    },
+    {
+        "abbreviation": "AFRIHUB",
+        "fullName": "Afrihub ICT Institute",
+            "address": "AP Plaza, Ademola Adekunbo Crescent, Wuse II, Abuja, FCT",
+            "email": "ese.egerega@afrihub.com"
+        
+    },
+    {
+        "abbreviation": "ACOTECH",
+        "fullName": "Ambassador College of Technology and Paralegal Studies",
+        
+            "address": "Ambassador House 422 Road, 6th Avenue, FESTAC Town, Lagos",
+            "email": "ambassadorcollegeparalegal@gmail.com",
+            "tel": ["08037010435", "08033377062"]
+        
+    },
+    {
+        "abbreviation": "AFEMEMS",
+        "fullName": "Armed Forces Electrical and Mechanical Engineering Mechatronics School",
+        
+            "address": "Mogadishu Cantonment, Asokoro, Abuja"
+        
+    },
+    {
+        "abbreviation": "AKPOLY-IEI",
+        "fullName": "Akwa-Ibom State Polytechnic(IEI)",
+        
+            "address": "Ikot Osurua, Ikot-Ekpene, Akwa-Ibom State"
+        
+    },
+    {
+        "abbreviation": "AL-MUHIBBA",
+        "fullName": "Al-Muhibba Institute ICT and Entrepreneurship",
+        
+            "address": "Kubwa, Abuja"
+        
+    },
+    {
+        "abbreviation": "AQUATECH",
+        "fullName": "Aquatech College of Agriculture and Technology",
+        
+            "address": "Behind Grace Private School, Fodacis Area, New Ade-Oyo Hospital Road, Ibadan, Oyo State",
+            "tel": ["08035234342", "08023520853"],
+            "email": "aquactechinstitute.ng@gmail.com",
+            "website": "www.aquatechinstitute.edu.ng"
+        
+    },
+    {
+        "abbreviation": "ASTEVEN",
+        "fullName": "Asteven Energy Institute",
+        
+            "address": "Asese, Ogun State"
+        
+    },
+    {
+        "abbreviation": "AREWA",
+        "fullName": "Arewa Paralegal Innovation Enterprise",
+        
+            "address": "6, Kashim Ibrahim Way, Ungwa Rimi, P.M.B. 2021, Kaduna, Kaduna State"
+        
+    },
+    {
+        "abbreviation": "AWGU-COH",
+        "fullName": "Awgu College of Medical Science and Health Technology",
+        
+            "address": "Enugu, Enugu State"
+        
+    },
+    {
+        "abbreviation": "BEEC",
+        "fullName": "Business Education Examination Council",
+        
+            "address": "13 Randle Road, Apapa, P. O. Box 55014, Falamo, Ikoyi, Lagos State",
+            "email": "beectraining@alpha.linkserve.com"
+        
+    },
+    {
+        "abbreviation": "BGBFS",
+        "fullName": "Best Global Business and Financial School",
+        
+            "address": "CICMA House 7, Kachia Road, Kaduna"
+        
+    },
+    {
+        "abbreviation": "BISBAS",
+        "fullName": "Benson Idahosa School of Basic and Applied Studies",
+        
+            "address": "Benin City, Edo State"
+        
+    },
+    {
+        "abbreviation": "BONNY",
+        "fullName": "Bonny Vocational Centre",
+        
+            "address": "Bonny Island, Rivers State"
+        
+    },
+    {
+        "abbreviation": "BUCKINGHAM",
+        "fullName": "Buckingham Academy of Management and Technology",
+        
+            "address": "Buckingham Estate, Adjacent Afor Nkor Market, Ogidi, Anambra State",
+            "email": "buckiepoly@yahoo.com"
+        
+    },
+    {
+        "abbreviation": "BAII",
+        "fullName": "Broadcast Arts Institute",
+        
+            "address": "38, Odofin Street, Igbogbo, Ikorodu, Lagos State"
+        
+    },
+    {
+        "abbreviation": "CAFITECH",
+        "fullName": "Calvary Foundation Institute of Technology",
+        
+            "address": "26, Dr. Ernest Ugo Street, Coal Camp, Enugu, Enugu State",
+            "tel": ["07030386181", "07066809464"],
+            "email": ["cafitechedu@ymail.com", "calvaryfoudation.org@gmail.com"]
+        
+    },
+    {
+        "abbreviation": "CALVARY-TECH",
+        "fullName": "Calvary College of Technology",
+        
+            "address": "KM 4, Agbado/Ijoko Road, Lemode – Ijoko, Ogun State"
+        
+    },
+    {
+        "abbreviation": "COBFI",
+        "fullName": "College of Banking and Finance",
+        
+            "address": "Off Olomi Academy-Ayegun Road, Fatusi Avenue, P.O. Box 41562, Ibadan, Oyo State",
+            "tel": ["08055108185", "07033854692"],
+            "email": "ceinigeria@yahoo.com"
+        
+    },
+    {
+        "abbreviation": "CCAE",
+        "fullName": "Centre for Creative Arts Education",
+        
+            "address": "Street 2, Star Project, Port Harcourt, River State"
+        
+    },
+    {
+        "abbreviation": "CCTI",
+        "fullName": "Complete Computers and Technology Institute",
+        
+            "address": "11, Adesuwa Grammar School Road, GRA, off Sapele Road, Benin City, Edo State",
+            "tel": ["08033535625", "08073210260"]
+        
+    },
+    {
+        "abbreviation": "CHERISH",
+        "fullName": "Cherish Enterprise Institute",
+        
+            "address": "Kurfi/Karare Road, Along Batsari Divisional Police Station, Batsari, Katsina State"
+        
+    },
+    {
+        "abbreviation": "CIBTECH",
+        "fullName": "Central Institute of Business and Technology",
+        
+            "address": "Kilometer 4, Benin-Abraka Road, Egba, Benin City"
+        
+    },
+    {
+        "abbreviation": "CISN",
+        "fullName": "The Certified Institute of Shipping of Nigeria (College of Maritime Transport Management and Technology)",
+        "address": ""
+    },
+    {  
+      "abbreviation": "EIT",  
+      "fullName": "Elerinmosa Institute of Technology",  
+      "address": "Ede Road, Oke Awesin, Erin Osun, Osun State."  
+    },  
+    {  
+      "abbreviation": "EKO-CMT",  
+      "fullName": "Eko College of Management and Technology",  
+      "address": "145, Ikotun Abanranje Road, Ikotun, Lagos State."  
+    },  
+    {  
+      "abbreviation": "EL-ACADEMY",  
+      "fullName": "El-Academy",  
+      "address": "Cadastral District, Gaduwa, FCT, Abuja."  
+    },  
+    {  
+      "abbreviation": "EMDEE",  
+      "fullName": "Emdee Shipping and Maritime College",  
+      "address": "Olorunisola Igesu Apena, Ipaja-Ayobo, Ayobo, Lagos."  
+    },  
+    {  
+      "abbreviation": "ENVILLE",  
+      "fullName": "Enville Institute of Environmental and Safety Management",  
+      "address": "4, Osho Street, Opebi-Oregun Link Road, Ikeja, Lagos.",  
+      "website": "www.envilleinstitute.org",  
+      "email": "info@envilleinstitute.org",  
+      "tel": ["08177330877", "07026033768", "07026033769"]  
+    },  
+    {  
+      "abbreviation": "ESTAC",  
+      "fullName": "ESTAC Institute of Construction Technology",  
+      "address": "No 1, Mike Torey Avenue, Phase 6, Trans-Ekulu, Enugu State.",  
+      "tel": ["08063300205", "08036055574", "08036754117"]  
+    },  
+    {  
+      "abbreviation": "FABA",  
+      "fullName": "The Film and Broadcast Academy",  
+      "address": "Westin Hall, KM 1 Ozoro - Asaba Express Way, Isoko North L.G.A., Delta State, Nigeria.",  
+      "email": "faba@yahoo.com",  
+      "tel": ["08039611001", "08027745399", "08035006442"]  
+    },  
+    {  
+      "abbreviation": "AFAKA-IEI",  
+      "fullName": "Federal College of Forestry, Mechanisation",  
+      "address": "P. M. B. 2273, Afaka, Kaduna."  
+    },  
+    {  
+      "abbreviation": "FEHIC-TECH",  
+      "fullName": "Foundation for Energy Health International College of Science and Technology",  
+      "address": "Mgbowo, Awgu, Enugu State."  
+    },  
+    {  
+      "abbreviation": "FIRSTMARK",  
+      "fullName": "Firstmark Innovation School of Technology",  
+      "address": "Ureje Quarters, Off Ikere Road, Ado-Ekiti, Ekiti State."  
+    },  
+    {  
+      "abbreviation": "FLYINGDOVE",  
+      "fullName": "Flyingdove Institute of Information Technology",  
+      "address": "Ijah-Pada, Kwali, FCT, Abuja.",  
+      "tel": ["09091555917", "08051180119"],  
+      "website": "www.flyingdoveinstitute.edu.ng",  
+      "email": ["info@flyingdoveinstitute.edu.ng", "flyingdovepoly@gmail.com"]  
+    },  
+    {  
+      "abbreviation": "FCTI",  
+      "fullName": "Foundation College of Technology",  
+      "address": "Ikot Idem, P.M.B. 1166, Ikot Ekpene, Akwa Ibom State.",  
+      "tel": ["082-742-4802", "07068092448"],  
+      "website": "www.foundationpoly.com.ng"  
+    },  
+    {  
+      "abbreviation": "FILAPS",  
+      "fullName": "Filaps Media Training Institute",  
+      "address": "Plot 52, New Court Road, Gyadi Gyadi, Kano, Kano State."  
+    },  
+    {  
+      "abbreviation": "GIPI",  
+      "fullName": "Gateway Industrial and Petro-Gas Institute",  
+      "address": "Oni, Ogun Waterside LGA, PMB 2123 Ijebu Ode, Ogun State, Nigeria.",  
+      "tel": ["08037033367", "07031027149", "08062308779"],  
+      "website": "www.gip-ng.com",  
+      "email": "info@gipi-ng.com"  
+    } ,
+    {  
+      "abbreviation": "GIPI",  
+      "fullName": "Gateway Industrial and Petro-Gas Institute",  
+      "address": "Oni, Ogun Waterside LGA, PMB 2123 Ijebu Ode, Ogun State, Nigeria.",  
+      "tel": ["08037033367", "07031027149", "08062308779"],  
+      "website": "www.gip-ng.com",  
+      "email": "info@gipi-ng.com"  
+    },  
+    {  
+      "abbreviation": "GLOBAL",  
+      "fullName": "Global Maritime Academy",  
+      "address": "Ogoni-Olomu, Ughelli South L.G.A., Delta State."  
+    },  
+    {  
+      "abbreviation": "GLOBAL-ICT",  
+      "fullName": "Global Institute of Commerce and Technology",  
+      "address": "House 2/4, 69 (A) Road, Team 7, Gwarinpa Estate, FCT, Abuja."  
+    },  
+    {  
+      "abbreviation": "GLORY-LAND",  
+      "fullName": "Glory Land Institute of Management",  
+      "address": "P.M.B. 1010, Ankpa, Kogi State.",  
+      "tel": ["08036275594", "09095804981"]  
+    },  
+    {  
+      "abbreviation": "GRACE",  
+      "fullName": "Grace City Institute of Technology and Management Science Ltd",  
+      "address": "Opposite Rinsayo Filling Station, Ring Road, Osogbo, Osun State."  
+    },  
+    {  
+      "abbreviation": "GRAIG-PHILLIPS",  
+      "fullName": "Graig-Philip College of Technology",  
+      "address": "14b, Olatubosun Street, Shonibare Estate, Maryland, Lagos."  
+    },  
+    {  
+      "abbreviation": "GRAJOS",  
+      "fullName": "Grajos College of Mass Communication",  
+      "address": "Ojokoro, Lagos State."  
+    },  
+    {  
+      "abbreviation": "HIGHLAND",  
+      "fullName": "Highland College of Technology and Further Education",  
+      "address": "Sango, GI Road Samonda, Ibadan, Oyo State."  
+    },  
+    {  
+      "abbreviation": "HIN",  
+      "fullName": "Hajj Institute of Nigeria",  
+      "address": "Central Business District, Abuja."  
+    },  
+    {  
+      "abbreviation": "HOMIK",  
+      "fullName": "Homik Oil and Gas Facility Engineering School",  
+      "address": "Homik Rehoboth Court by Jesus Evang Power Mission, NTA/Choba Road Ozuoba, Port Harcourt, Rivers State."  
+    },  
+    {  
+      "abbreviation": "ICCN-IFIM",  
+      "fullName": "ICCN Institute of Finance and Investment Management",  
+      "address": "St. Thomas Catholic Church Road, Umuko Village, Nkwerre, P.M.B. 7070, Orlu, Imo State.",  
+      "tel": "08064866329",  
+      "website": "www.iccnitmpoly.org"  
+    },  
+    {  
+      "abbreviation": "IFE-BUS",  
+      "fullName": "Ife Business School",  
+      "address": "Plot 10/12 Abayomi Omisore Avenue, Off Ede Road, Parakin Quarters, Ile-Ife, Osun State."  
+    },  
+    {  
+      "abbreviation": "IBF",  
+      "fullName": "Institute of Banking and Finance",  
+      "address": "c/o African Regional Centre for Engineering Design and Management, Km 10, Iwo Road, P.O. Box 41562, Ibadan, Oyo State.",  
+      "tel": "08136873714",  
+      "email": "ceinigeria@yahoo.com"  
+    },  
+    {  
+      "abbreviation": "ICCT",  
+      "fullName": "Ilesha City College of Technology",  
+      "address": "Ilesa-Ibokun Road, Ilase-Ijesha via Ilesha, Osun State."  
+    },  
+    {  
+      "abbreviation": "ICSIS",  
+      "fullName": "Institute of Corporate Security and Intelligence Studies",  
+      "address": "Sani Abacha Youth Centre, 22/32 Madobi Road, Kano State."  
+    },  
+    {  
+      "abbreviation": "IBOM-IMT",  
+      "fullName": "Ibom Institute of Management and Technology",  
+      "address": "Ikot Ekpene, P. O. Box 372, Ikot Ekpene, Akwa Ibom State.",  
+      "tel": "08037103742",  
+      "email": "iimtech.edu@gmail.com"  
+    },  
+    {  
+      "abbreviation": "ICCN",  
+      "fullName": "International Chaplaincy Corps Network Institute of Security Technology and Management",  
+      "address": "Orlu, Imo State."  
+    },  
+    {  
+      "abbreviation": "IFOTECH",  
+      "fullName": "Ifo College of Management and Technology",  
+      "address": "KM 50, Lagos/Abeokuta Express Way, P.M.B. 5030, Ifo, Ogun State.",  
+      "tel": ["08023331054", "08035012650", "08054175642"],  
+      "website": "www.ifotech.edu.ng",  
+      "email": "info@ifotech.edu.ng"  
+    },  
+    {  
+      "abbreviation": "IICT",  
+      "fullName": "Institute of Information and Computer Technology",  
+      "address": "Sunny Illo Educational Complex, P. O. Box 213, Awgu, Enugu State.",  
+      "tel": ["08038562588", "08079039588"],  
+      "website": "www.iictng.org"  
+    },  
+    {  
+      "abbreviation": "IIIT",  
+      "fullName": "Innovation Institute of Technology",  
+      "address": "Akure, Ondo State."  
+    },  
+    {  
+      "abbreviation": "IMAN",  
+      "fullName": "Iman College of Business Technology",  
+      "address": "5th Avenue, 503 Road, Federal Housing Estate, Sharada Phase 2, Kano State."  
+    },  
+    {  
+      "abbreviation": "IMFI",  
+      "fullName": "IMFI, ICT Academy",  
+      "address": "No 54 Nsikak Eduok Avenue, P. O. Box 1723, Uyo.",  
+      "email": "info@imfiacademy.com",  
+      "website": "www.imfiacademy.com",  
+      "tel": ["08028237116", "08069169915"]  
+    },  
+    {  
+      "abbreviation": "IMPERIAL",  
+      "fullName": "Imperial College of Advanced Studies",  
+      "address": "Kano, Kano State."  
+    },  
+    {  
+      "abbreviation": "IMS",  
+      "fullName": "Institute of Maritime and Safety",  
+      "address": "44, Ifoshin Street, Ejigbo, Alimosho, Lagos State.",  
+      "email": "info@maritimesafesng.com",  
+      "website": "www.maritimesafesng.com",  
+      "tel": "08033339231"  
+    },  
+    {  
+      "abbreviation": "IPCASTECH",  
+      "fullName": "International Professional College of Administration, Science and Technology",  
+      "address": "Km 20, Keffi Express Road, Masaka Mission City, Nasarawa State."  
+    },  
+    {  
+      "abbreviation": "IPETU-ICT",  
+      "fullName": "Ipetu-Ijesha College of Technology",  
+      "address": "Easy Life Estate, Along Banjolat School Road, Ipetu-Ijesha, Osun State."  
+    },
+    {
+      "abbreviation": "KBS",
+      "fullName": "Kaduna Business School",
+      "address": "No 17 Gobarau Road, U/Rimi G. R.A., Kaduna – Nigeria.",
+      "tel": "08023669308, 07035305458",
+      "email": "info@kbsedu.org",
+      "website": "www.kbsedu.org"
+    },
+    {
+      "abbreviation": "YEFMADEC",
+      "fullName": "Yefmadec Institute of Science and Technology",
+      "address": "Mosogar, Delta State."
+    },
+    {
+      "abbreviation": "YESCH",
+      "fullName": "Yenagoa Enterprise School",
+      "address": "Sunmail Drive, Isaac Boro Express Way, Etegwe, Yenagoa, Bayelsa State."
+    },
+    {
+      "abbreviation": "YHIAS",
+      "fullName": "Yahaya Hamza Institute of Technology",
+      "address": "Mando, Kaduna, Kaduna State."
+    },
+    {
+      "abbreviation": "ZIBEH",
+      "fullName": "Zibeh Institute of Technology",
+      "address": "Jos, Plateau State."
+    },
+    {
+      "abbreviation": "OASIS",
+      "fullName": "Olawoyin Awosika School of Innovation Studies",
+      "address": "4, Oshorun Heritage Estate, Isheri, North LGA, Lagos State."
+    },
+    {
+      "abbreviation": "OLUAKA",
+      "fullName": "Oluaka Institute of Technology",
+      "address": "Obuokwu Obinze, Along Owerri-Port Harcourt Express Way, Owerri, Imo State."
+    },
+    {
+      "abbreviation": "OFFER-CENTER",
+      "fullName": "Offer Center Institute of Agriculture",
+      "address": "Oluponna, Iwo, Osun State."
+    },
+    {
+      "abbreviation": "PAN-AFRICAN",
+      "fullName": "Pan-African Institute of Paralegal Studies",
+      "address": "Plot CPI, Panaf Drive, Dawaki Rockville, Gwarimpa, Bwari Area Council, Abuja."
+    },
+    {
+      "abbreviation": "PAN",
+      "fullName": "PAN Learning Centre",
+      "address": "Kakuri, Kaduna State."
+    },
+    {
+      "abbreviation": "PEACE-IMT",
+      "fullName": "Peace Institute of Management Technology",
+      "address": "Abak, Akwa Ibom State."
+    },
+    {
+      "abbreviation": "PEFTI",
+      "fullName": "PEFTI Film Institute",
+      "address": "5/7 Joy Avenue, By UBA, Off Osolo Way, Ajao Estate, Isolo, P.O. Box 4325, Oshodi, Lagos State.",
+      "tel": "07031622270, 08133370731, 08116305684",
+      "email": "pefti2004@yahoo.com"
+    },
+    {
+      "abbreviation": "PRIME",
+      "fullName": "Prime Innovation Institute of Technology",
+      "address": "Plot 110 Ira-Nla, off Lekki-Epe Express Way, Ajah, Lagos State.",
+      "email": "info@piit.com.ng",
+      "website": "www.piit.com.ng"
+    },
+    {
+      "abbreviation": "RAINDROPS",
+      "fullName": "Raindrops College of Management and Technology",
+      "address": "Amannachi, Ebenator, Orsu, Imo State."
+    },
+    {
+      "abbreviation": "RCA",
+      "fullName": "Risk Control Academy",
+      "address": "Royal Cedar Plaza, Km 25, Lekki-Epe Express Way, Ajiwe, Ajah, Lagos.",
+      "tel": "23414611491",
+      "website": "www.riskcontrolnigeria.com",
+      "email": "info@riskcontrolnigeria.com"
+    },
+    {
+      "abbreviation": "ROCANA",
+      "fullName": "Rocana Institute of Technology",
+      "address": "37/38, Abiriba Avenue, Emene Industrial Layout, by Strabag bus stop, Emene, Enugu.",
+      "website": "www.rit.edu.ng",
+      "tel": "08032343063, 08158830079"
+    },
+    {
+      "abbreviation": "ROLOF",
+      "fullName": "Rolof Computer Academy",
+      "address": "Plot 110, Apala Street, Warri, Delta State.",
+      "tel": "08185783901, 08140721198, 08135331745",
+      "email": "admissions@rolofcomputeracademy.edu.ng",
+      "website": "www.rolofcomputeracademy.edu.ng"
+    },
+    {
+      "abbreviation": "ROYAL-ARTS",
+      "fullName": "Royal Arts Academy",
+      "address": "4, Adebisi Close, Off Ogunlana Drive, Off Olufemi Street, Surulere, Lagos."
+    },
+    {
+      "abbreviation": "SAGAMU-BAI",
+      "fullName": "Sagamu Business and Arts Institute",
+      "address": "Plot 9, Blk 1, Opp. Oba Sonariwo Primary School, Sagamu, Ogun State."
+    },
+    {
+      "abbreviation": "SBH",
+      "fullName": "School of Banking Honours",
+      "address": "74, Isheri Road, Ojodu-Berger, Lagos.",
+      "tel": "01-7359884, 08098033989",
+      "website": "www.sbh-edu.org"
+    },
+    {
+      "abbreviation": "SENTONA",
+      "fullName": "Sentona Institute of Management and Technology",
+      "address": "Sentona Street, New Nyanya, Karu, Nasarawa State.",
+      "tel": "08096460220, 08029735469, 08054297600",
+      "email": "sentonainstitute@gmail.com",
+      "website": "sentona-imt.com"
+    },
+    {
+      "abbreviation": "SMART-IMAGE",
+      "fullName": "Smart Image Film and Theatre Institute",
+      "address": "9, Odekunle Street, Agbowo, Ibadan, Oyo State.",
+      "tel": "08023119316, 08136026396",
+      "email": "smartimage01@yahoo.co.uk",
+      "website": "www.smartimagefilms.com"
+    },
+    {
+      "abbreviation": "SOFTQUEST",
+      "fullName": "Softquest Incorporated College",
+      "address": "Ogbomoso, Oyo State."
+    },
+    {
+      "abbreviation": "SOUTH-EASTERN",
+      "fullName": "South Eastern College of Computer Engineering and Information Technology",
+      "address": "Owerri, NO. 9/14 Mbonu Ojike Street, Ikenegbu, Owerri.",
+      "tel": "+23408037101792, +2348037947435",
+      "email": "info@secceitedu.com",
+      "website": "www.secceitedu.com"
+    },
+    {
+      "abbreviation": "SOUTHERN-NIG",
+      "fullName": "Southern Nigeria Institute of Innovative Technology",
+      "address": "Delightsomewood, Ifewara, Atakumasa L.G.A., P.M.B. 5540, Ile-Ife, Osun State.",
+      "website": "www.sniitnigeria.org",
+      "email": ["sniitnigeria@yahoo.com", "adminiscu@gmail.com"],
+      "tel": ["08130176363", "08023915182", "07052906301", "08028491169"]
+    },
+    {
+      "abbreviation": "SOTERIA",
+      "fullName": "Soteria Business School",
+      "address": "Bola Ige Junction, Liberty Road, Oke Ado, Ibadan, Oyo State."
+    },
+    {
+      "abbreviation": "STARS",
+      "fullName": "Stars Maritime Academy (Merchant Navy Institute)",
+      "address": "Ayobo – Otta Road, Lagos, P. O. Box 176 Ikotun, Lagos, Nigeria.",
+      "tel": "08056212451, 08061509740",
+      "email": ["info@starsmaritme.com.ng", "admissions@starsmaritime.com.ng"],
+      "website": "www.starsmaritime.com.ng"
+    },
+    {
+      "abbreviation": "STAUG",
+      "fullName": "St. Augustine Innovation Enterprise Institute",
+      "address": "Suite 1, 2nd Floor, Adebare Street, Ogudu GRA Road, Ogudu, Lagos State."
+    },
+    {
+      "abbreviation": "ST RITA",
+      "fullName": "St. Rita Innovative Institute",
+      "address": "C8/C9 Niger Bridge Layout Housing Estate Fegge, Onitsha, P.O. Box"
+    },
+    
+        {
+            "abbreviation": "CIFMAN",
+            "fullName": "Cifman Institute of Technology and Management",
+            "address": "6, Lancaster Road, Opp. Queen’s College, Sabo, Yaba – Lagos.",
+            "tel": "08053788880-1, 07027622400, 08033995247, 08083733777"
+        },
+        {
+            "abbreviation": "CIMT",
+            "fullName": "Comprehensive Institute of Management and Technology",
+            "address": "Byazin, Kubwa, Abuja."
+        },
+        {
+            "abbreviation": "CITYGATE",
+            "fullName": "Citygate Institute of Innovation and Technology",
+            "address": "Citi Campus, by Uni. Ibadan 2nd Gate, Orogun Bus Stop, Behind Keto Petrol Station, Oyo Road, Orogun, Ibadan, Oyo State, Southwest Nigeria.",
+            "tel": "+234 703 587 9569, 081 552 68382",
+            "email": "enquiries247@citygatevarsity.com",
+            "website": "www.citygatevarsity.com"
+        },
+        {
+            "abbreviation": "CIMT-IDOGBO",
+            "fullName": "City Institute of Management and Technology",
+            "address": "Idogbo Educational Centre, Sani Abacha Road, Mararaba, Nasarawa State."
+        },
+        {
+            "abbreviation": "CLARA-SMPA",
+            "fullName": "Clara School of Media and Performing Arts",
+            "address": "1, Sawmail Drive, Off Isaac Boro Road, Etegwe, Yenagoa, Bayelsa State."
+        },
+        {
+            "abbreviation": "CONARINA",
+            "fullName": "Conarina Maritime Academy",
+            "address": "Oria, Abraka, Delta State.",
+            "email": "conarina_maritime_academy@yahoo.com"
+        },
+        {
+            "abbreviation": "CORNER-IMT",
+            "fullName": "Cornerstone Institute of Management and Technology",
+            "address": "Uyo, Akwa Ibom State."
+        },
+        {
+            "abbreviation": "DAGAMA",
+            "fullName": "Dagama’s College of Applied Science",
+            "address": "1, Road E, Chikaji Road, MTD, Sabon-Gari, Zaria, Kaduna State."
+        },
+        {
+            "abbreviation": "DALEWARES",
+            "fullName": "Dalewares Institute of Technology (DIT)",
+            "address": "PLOT 31-33, Bode Thomas Road, off Shylon street, Palmgrove, Ikorodu Road, Lagos.",
+            "tel": "+234-07063370167, 08023333161",
+            "email": "ditlagos@yahoo.com, info@dit.edu.ng",
+            "website": "www.dit.edu.ng"
+        },
+        {
+            "abbreviation": "DAMSON",
+            "fullName": "Damson Institute of Management and Technology",
+            "address": "No. 5, Damson Street, Off Etsu Jetta Street, Phase 1, Jikwoyi, Along Nyanya Karshi Road, FCT Abuja."
+        },
+        {
+            "abbreviation": "DEL-YORK",
+            "fullName": "Del-York Creative Academy",
+            "address": "8a, Justice Modupe Omo-Eboh Street, Off Glover Road, Ikoyi, Lagos."
+        },
+        {
+            "abbreviation": "DIABO",
+            "fullName": "Diabo Paralegal Training Institute",
+            "address": "12 King George Street, Onikan, Lagos State."
+        },
+        {
+            "abbreviation": "DIALOGUE",
+            "fullName": "Dialogue Computer Institute",
+            "address": "Katsina, Katsina State."
+        },
+        {
+            "abbreviation": "DIALOGUE-KD",
+            "fullName": "Dialogue Computer Institute",
+            "address": "Kudan Road, Legislative Quarters, Ungwan Dosa, Kaduna, Kaduna State."
+        },
+        {
+            "abbreviation": "DBI-KANO",
+            "fullName": "Digital Bridge Institute",
+            "address": "Katsina Road, Kano, Kano State."
+        },
+        {
+            "abbreviation": "DBI-LAGOS",
+            "fullName": "Digital Bridge Institute",
+            "address": "1, Federal Medical Store Road, Oshodi, Lagos, Lagos State."
+        },
+        {
+            "abbreviation": "DIMT",
+            "fullName": "Distinct Institute of Management Science",
+            "address": "Osogbo, Osun State."
+        },
+        {
+            "abbreviation": "DOTS",
+            "fullName": "DOTS Institute of Technology",
+            "address": "92, Ijemo Agbadu Road, Abeokuta, Ogun State."
+        },
+        {
+            "abbreviation": "ECWA-ICS",
+            "fullName": "ECWA International College of Technology",
+            "address": "7, JD Gomwalk Road, P.O. Box 7684, Jos, Plateau State."
+        },
+        {
+            "abbreviation": "EIT",
+            "fullName": "Elerinmosa Institute of Technology",
+            "address": "Ede Road, Oke Awesin, Erin Osun, Osun State."
+        },
+            {
+                "abbreviation": "ST RITA",
+                "fullName": "St. Rita Innovative Institute",
+                "address": "C8/C9 Niger Bridge Layout, Housing Estate Fegge, Onitsha, P.O. Box 2312, Onitsha, Nigeria",
+                "email": "info@stritainstitute.org, infoedu@stritainstitute.org",
+                "website": "www.stritainstitute.org",
+                "tel": "08033122191, 08051661331"
+            },
+            {
+                "abbreviation": "STWINI",
+                "fullName": "St. Winifred Innovative Institute",
+                "address": "Olomi Ayegun Road Off Olomi Academy Bridge, P.O. Box 41562, Dugbe, Ibadan",
+                "email": "St.winifred@yahoo.com",
+                "tel": "08055108185"
+            },
+            {
+                "abbreviation": "TASHIBA",
+                "fullName": "Tashiba Institute of Information Technology",
+                "address": "Gyallesu, Zaria, Kaduna State"
+            },
+            {
+                "abbreviation": "OCMTECH",
+                "fullName": "Owu College of Management Technology",
+                "address": "Kilometre 10 Itele-Ota Road, Olugbode Ota, Ogun State"
+            },
+            {
+                "abbreviation": "TKEDVI",
+                "fullName": "Timeon Kairos Educational and Vocational Institute",
+                "address": "12, Remoye Street, Baale Bus Stop, Akowanjo, Abeokuta Express Way, Agege, Lagos State"
+            },
+            {
+                "abbreviation": "TOTAL",
+                "fullName": "Total Human Capital Development Institute",
+                "address": "Lagos"
+            },
+            {
+                "abbreviation": "TOWER",
+                "fullName": "Tower Innovation College",
+                "address": "14, New Adeoyo Hospital Road, Ring Road, Box 13039, G.P.O. Dugbe, Ibadan",
+                "email": "towerinnovative@yahoo.com",
+                "tel": "08037276613, 02-2318163"
+            },
+            {
+                "abbreviation": "TRIZAS",
+                "fullName": "Trizas Institute for Innovative Education",
+                "address": "134/15, Udoye Street, Trans-Ekulu Enugu",
+                "tel": "07030106793, 08033245997",
+                "email": "trizasinstitute@yahoo.com"
+            },
+            {
+                "abbreviation": "UA CST",
+                "fullName": "UA College of Science and Technology",
+                "address": "Osuofia, Anambra State"
+            },
+            {
+                "abbreviation": "UPTONVILLE",
+                "fullName": "Uptonville Oil and Gas Institute",
+                "address": "129/133 Woji Road, G.R.A. Phase 11, Port Harcourt",
+                "website": "www.uptovilleoginstu.org",
+                "email": "enquirie@uptonvilleoginstu-org, uptonedu@yahoo.co.uk",
+                "tel": "08039375456, 084-463963"
+            },
+            {
+                "abbreviation": "OSENI",
+                "fullName": "Oseni Elamah Institute",
+                "address": "39, Auchi Polytechnic Road, P.O.Box 815, Auchi, Edo State",
+                "tel": "057-200318",
+                "email": "oseicti@excite.com",
+                "website": "www.oseicti.com"
+            },
+            {
+                "abbreviation": "ONIT",
+                "fullName": "Onit Institute of Technology",
+                "address": "P.O.Box 677 Nwankwu Industrial Estate, Abagana Njikoka L.G.A. Anambra State",
+                "email": "onitinstitute@yahoo.com",
+                "website": "www.onitinstitute.edu.ng"
+            },
+            {
+                "abbreviation": "UMUEBE",
+                "fullName": "Umuebe Farm College",
+                "address": "Abakaliki, Ebonyi State",
+                "tel": "08034259486, 07057730888",
+                "email": "okonkwoclem@yahoo.com",
+                "website": "www.umuebe.org"
+            },
+            {
+                "abbreviation": "UNITECH",
+                "fullName": "United School of Science and Technology",
+                "address": "Gamajigo, Jos, off Zaria Road, Jos, Plateau State",
+                "tel": "08039469095, 08076925158",
+                "email": "unitechnigeria@yahoo.com, info@unitechnigeria.com",
+                "website": "www.unitechnigeria.com"
+            },
+            {
+                "abbreviation": "UNICEM",
+                "fullName": "UNICEM Community Initiative Training Institute",
+                "address": "Unicem factory, Spring Road Diamond Hill, Mfamosing, Cross River State"
+            },
+            {
+                "abbreviation": "UNIVAL",
+                "fullName": "Unival Institute of Technology",
+                "address": "Benin City, Edo State"
+            },
+            {
+                "abbreviation": "KBS",
+                "fullName": "Kaduna Business School",
+                "address": "No 17 Gobarau Road, U/Rimi G. R.A., Kaduna – Nigeria",
+                "tel": "08023669308, 07035305458",
+                "email": "info@kbsedu.org",
+                "website": "www.kbsedu.org"
+            },
+            {
+                "abbreviation": "YEFMADEC",
+                "fullName": "Yefmadec Institute of Science and Technology",
+                "address": "Mosogar, Delta State"
+            },
+            {
+                "abbreviation": "YESCH",
+                "fullName": "Yenagoa Enterprise School",
+                "address": "Sunmail Drive, Isaac Boro Express Way, Etegwe, Yenagoa, Bayelsa State"
+            },
+            {
+                "abbreviation": "YHIAS",
+                "fullName": "Yahaya Hamza Institute of Technology",
+                "address": "Mando, Kaduna, Kaduna State"
+            },
+            {
+                "abbreviation": "ZIBEH",
+                "fullName": "Zibeh Institute of Technology",
+                "address": "Jos, Plateau State"
+            }        
+    
+    
+]

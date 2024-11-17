@@ -7,6 +7,8 @@ import { SabletechComponent } from './ui/view/sabletech/sabletech.component';
 import { HeaderComponent } from './ui/view/sabletech/components/header/header.component';
 import { FooterComponent } from './ui/view/sabletech/components/footer/footer.component';
 import { HeroComponent } from './ui/view/sabletech/components/hero/hero.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HeroComponent } from './ui/view/sabletech/components/hero/hero.componen
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

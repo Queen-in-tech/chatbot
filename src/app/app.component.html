@@ -1,1 +1,73 @@
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+
+<div class="bg-gray-400 h-screen w-screen">
+    <div class="relative h-screen w-screen">
+      <img
+        src="https://cdn-icons-png.freepik.com/512/8943/8943377.png"
+        alt=""
+        (click)="openChatbot = true"
+        class="w-20 h-20 absolute bottom-0 right-0 m-5 cursor-pointer"
+      />
+  
+      <div
+        *ngIf="openChatbot"
+        class="absolute bottom-0 flex flex-col right-0 m-5 mr-3 bg-gray-50 w-full h-[95vh] sm:w-[75vw] md:w-[70vw] lg:w-[32vw] lg:h-[95vh] rounded-xl shadow-md items-start"
+      >
+        <div class="p-4 w-full flex items-center gap-4 justify-between bg-gray-300 rounded-t-xl">
+          <div class="w-full flex items-center gap-4">
+            <img
+              src="https://cdn-icons-png.freepik.com/512/8943/8943377.png"
+              alt=""
+              class="w-12 h-12"
+            />
+            <div class="flex flex-col gap-1.5">
+              <p class="text-purple-500 font-semibold">AI Bot</p>
+              <p class="text-xs text-gray-500">
+                {{ typing ? "Typing....." : "Online" }}
+              </p>
+            </div>
+          </div>
+  
+          <img
+            src="https://static-00.iconduck.com/assets.00/x-letter-icon-256x256-uc7b0w3a.png"
+            class="w-5 h-5 cursor-pointer"
+            alt=""
+            (click)="openChatbot = false"
+          />
+        </div>
+        <div
+          class="w-full h-[80%] overflow-y-scroll p-4 gap-3 flex flex-col items-start"
+        >
+          <div
+            *ngFor="let message of messages; let i = index"
+            [ngClass]="message.role === 'assistant' ? 'justify-start' : 'justify-end'"
+            class="flex w-full"
+          >
+            <div
+              [ngClass]="message.role === 'assistant'
+                ? 'py-2 pr-5 pl-2 rounded-xl text-start bg-purple-400 text-white'
+                : 'py-2 pr-5 pl-2 rounded-xl text-end bg-gray-300 text-gray-500'"
+            >
+              {{ message.content }}
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-200 flex justify-between items-center rounded-b-xl p-4 w-full">
+          <input
+            type="text"
+            placeholder="Type your new message..."
+            class="bg-transparent w-[80%] outline-none px-2"
+            [(ngModel)]="message"
+            (keyup.enter)="sendMessage()"
+          />
+          <img
+            src="https://e7.pngegg.com/pngimages/841/271/png-clipart-computer-icons-send-miscellaneous-angle-thumbnail.png"
+            alt=""
+            class="w-8 h-8 cursor-pointer bg-transparent"
+            (click)="sendMessage()"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  
