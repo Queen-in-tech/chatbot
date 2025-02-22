@@ -1,4 +1,4 @@
-name: Build and Deploy to Netlify
+name: Build and Deploy
 
 on:
   push:
@@ -21,8 +21,14 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Inject OpenAI API Key
+      run: |
+        echo "Injecting OpenAI API Key into environment.prod.ts"
+        sed -i 's/openaiApiKey: .*/openaiApiKey: \"${{ secrets.openaiApiKey }}\"/' src/environments/environment.prod.ts
+
     - name: Build Angular app
-      run: ng build --prod
+      run: |
+        ng build --configuration production 
 
     - name: Deploy to Netlify
       uses: nwtgck/actions-netlify@v1
