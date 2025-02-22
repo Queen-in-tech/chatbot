@@ -23,5 +23,5 @@ jobs:
 
     - name: Build Angular app
       run: |
-        echo "OPENAI_API_KEY=${{ secrets.openaiApiKey }}" >> $GITHUB_ENV
+        echo "openaiApiKey=${{ secrets.openaiApiKey }}" >> $GITHUB_ENV
         ng build --prod
