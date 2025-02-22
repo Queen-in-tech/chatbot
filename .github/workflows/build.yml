@@ -31,10 +31,11 @@ jobs:
 
     - name: Build Angular app
       run: |
-        ng build --configuration production 
+        ng build --configuration production
 
     - name: Deploy to Netlify
-      uses: netlify/actions/netlify-cli-action@v2
+      uses: nwtgck/actions-netlify@v1
       with:
-        publish-dir: ./dist/sabletech
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+        netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        publish-dir: dist/
