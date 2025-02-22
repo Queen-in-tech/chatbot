@@ -1,53 +1,15 @@
-import { Component } from '@angular/core';
-import AOS from 'aos';
+import { Component,  ElementRef, ViewChild } from '@angular/core';
+
 import { OpenAI } from 'openai';
-import { OpenaiService } from './openai.service';
+
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions.mjs';
 import { environment } from '../environments/environment';
-import { PineconeStore } from "@langchain/pinecone";
-import { OpenAIEmbeddings } from "@langchain/openai";
-import * as pdfjsLib from "pdfjs-dist";
+
 import "pdfjs-dist/build/pdf.worker.min.mjs";
-import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import { Pinecone as PineconeClient } from "@pinecone-database/pinecone";
-import { HttpClient } from '@angular/common/http';
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { RagService } from './rag.service';
 // import { Document } from "langchain/document";
-
-
-interface SchoolDocument {
-  id: string; // assuming id exists
-  fullName: string;
-  abbreviation: string;
-  address: string;
-  website: string;
-  email: string;
-  tel: string;
-  metadata: {
-    embedding: number[]; // store embedding in metadata
-  };
-  pageContent: string;
-}
-class Document<T> {
-  pageContent: string;
-  metadata: T;
-  abbreviation: string;
-  fullName: string;
-  address: string;
-  tel: string;
-  website: string;
-  email: string;
-  constructor(data: { pageContent: string; metadata: T, abbreviation: string, fullName: string; address: string; tel: string, website: string; email: string}) {
-    this.pageContent = data.pageContent;
-    this.metadata = data.metadata;
-    this.abbreviation = data.abbreviation,
-    this.fullName = data.fullName,
-    this.address = data.address,
-    this.tel = data.tel,
-    this.website = data.website,
-    this.email = data.email
-  }
-}
-
 
 @Component({
   selector: 'app-root',
@@ -55,374 +17,323 @@ class Document<T> {
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  @ViewChild('messagesContainer') private messagesContainer!: ElementRef;
+
   openChatbot: boolean = false;
   typing = false;
   message: string = '';
+  conversationState: 'welcome' | 'programType' | 'institution' | 'waec' | 'recommendation'| 'exit' = 'welcome';
   documents: { text: string, embedding: number[] }[] = [];
   relevantChunk: any;
-
   openai = new OpenAI({
     apiKey: environment.openaiApiKey,
     dangerouslyAllowBrowser: true,
   });
+
   schools: any;
-  constructor(private http: HttpClient){
+  children: any[] =[]
 
+  constructor(private http: HttpClient, private ragService: RagService) {
+   
   }
-
-
-async ngOnInit() {
-  try {
-    this.http.get<any[]>('/inno-list-of-schools.json').subscribe(
-      async (data) => {
-        this.schools = data;
-        console.log('Schools loaded:', this.schools);
-
-        // Combine all school data into text content for embedding
-        const textContent = this.schools
-          .map(
-            (school: {
-              abbreviation: string;
-              fullName: string;
-              address: string;
-              tel: string;
-              email: string;
-              website: string;
-            }) =>
-              `Abbreviation: ${school.abbreviation}\nFull Name: ${school.fullName}\nAddress: ${school.address}\nTel: ${school.tel || 'N/A'}\nEmail: ${school.email || 'N/A'}\nWebsite: ${school.website || 'N/A'}`
-          )
-          .join("\n\n");
-
-        // Split the content into smaller chunks
-        const splitter = new RecursiveCharacterTextSplitter({
-          chunkSize: 1500,
-          chunkOverlap: 250,
-          separators: ["\r\n\r\n", "\n\n", "\n", " ", ""],
-        });
-
-        const docs = await splitter.createDocuments([textContent]);
-        console.log('Split documents:', docs);
-
-        const embeddings = new OpenAIEmbeddings({
-          openAIApiKey: environment.openaiApiKey,
-        });
-
-        const embeddedDocs: any = []; // Add metadata structure type here
-
-        // Iterate over docs and create documents with embedding and metadata
-        for (const school of this.schools) {
-          const embedding = await embeddings.embedQuery(school.fullName + " " + school.address); // Adjust embedding logic if needed
-          
-          const doc = new Document({
-            pageContent: `${school.fullName} ${school.address}`, // You can choose the text to embed
-            metadata: {
-              embedding, // The embedding for the document
-              abbreviation: school.abbreviation,
-              fullName: school.fullName,
-              address: school.address,
-              tel: school.tel,
-              website: school.website,
-              email: school.email,
-            },
-            abbreviation: school.abbreviation,
-              fullName: school.fullName,
-              address: school.address,
-              tel: school.tel,
-              website: school.website,
-              email: school.email,
-          });
-
-          embeddedDocs.push(doc);
-        }
-
-        console.log('Embedded documents:', embeddedDocs);
-
-        // Now store the embedded documents with their metadata
-        await this.storeSchoolDataWithEmbedding(embeddedDocs);
-      }
-    );
-  } catch (error) {    console.error("Error processing the PDF:", error);
-  }
-}
-
-  
-  storeEmbeddingsLocally(embeddedDocs: any): void {
-    const dbName = 'school_embeddings_db';  // Database name
-    const storeName = 'embeddings';         // Object store name
-    let db;
-  
-    // Open the database with a specific version. Incrementing version forces the upgrade.
-    const request = indexedDB.open(dbName, 2); // Version 2 (if you already have version 1, this will trigger onupgradeneeded)
-  
-    // Error handler for the database open request
-    request.onerror = (event) => {
-      console.error('Error opening IndexedDB:', event);
-    };
-  
-    // This event is triggered when the database is upgraded (or created for the first time)
-    request.onupgradeneeded = (event) => {
-      const dbRequest = event.target as IDBRequest;
-      db = dbRequest.result;
-  
-      console.log('onupgradeneeded triggered');
-      console.log('Current object stores:', db.objectStoreNames);
-  
-      if (!db.objectStoreNames.contains(storeName)) {
-        // Create the object store if it doesn't exist
-        const objectStore = db.createObjectStore(storeName, { keyPath: 'id', autoIncrement: true });
-        console.log('Object store created:', storeName);
-      } else {
-        console.log('Object store already exists.');
-      }
-    };
-  
-    // Success handler once the database is successfully opened
-    request.onsuccess = (event) => {
-      const dbRequest = event.target as IDBRequest;
-      db = dbRequest.result;
-  
-      // Perform the transaction to add documents
-      const transaction = db.transaction([storeName], 'readwrite');
-      const store = transaction.objectStore(storeName);
-  
-      // Add documents to the object store
-      embeddedDocs.forEach((doc: { pageContent: any; metadata: any; }) => {
-        store.add({
-          pageContent: doc.pageContent,
-          metadata: doc.metadata,
-        });
-      });
-  
-      // Handle transaction completion
-      transaction.oncomplete = () => {
-        console.log('Documents successfully added to IndexedDB');
-      };
-  
-      transaction.onerror = (error: any) => {
-        console.error('Error during transaction:', error);
-      };
-    };
-  }
-  
-  // Function to store school data with embedding in IndexedDB
-async storeSchoolDataWithEmbedding(school: {
-  abbreviation: string;
-  fullName: string;
-  address: string;
-  tel: string;
-  website: string;
-  email: string;
-}) {
-  const embeddings = new OpenAIEmbeddings({
-    openAIApiKey: environment.openaiApiKey,
-  });
-
-  // Create embedding for the school
-  const schoolText = `${school.abbreviation} ${school.fullName} ${school.address}`;
-  const schoolEmbedding = await embeddings.embedQuery(schoolText);
-
-  const storeDocument = {
-    metadata: {
-      abbreviation: school.abbreviation,
-      fullName: school.fullName,
-      address: school.address,
-      website: school.website,
-      email: school.email,
-      tel: school.tel
-    },
-    embedding: schoolEmbedding, // The numeric embedding
+  userResponses:any = {
+    programType: 0,
+    institutionType: 0,
+    discipline: 0,
+    waecResults: '',
+    knowledgeBase: []
   };
-
-  const dbName = 'school_embeddings_db';
-  const storeName = 'embeddings';
-
-  const request = indexedDB.open(dbName, 1);
   
-  request.onupgradeneeded = (event) => {
-    const db = (event.target as IDBRequest).result;
-    if (!db.objectStoreNames.contains(storeName)) {
-      const store = db.createObjectStore(storeName, { keyPath: 'abbreviation' });
-      store.createIndex('embedding', 'embedding');
-    }
-  };
-
-  request.onsuccess = (event) => {
-    const db = (event.target as IDBRequest).result;
-    const transaction = db.transaction([storeName], 'readwrite');
-    const store = transaction.objectStore(storeName);
-    store.put(storeDocument);
-
-    transaction.oncomplete = () => {
-      console.log('School data stored successfully');
-    };
-  };
-
-  request.onerror = (event) => {
-    console.error('Error storing school data:', event);
-  };
-}
-
-  
-  // Cosine similarity function to compare embeddings
-  cosineSimilarity(vec1: number[], vec2: number[]): number {
-    const dotProduct = vec1.reduce((sum, v, i) => sum + v * vec2[i], 0);
-    const mag1 = Math.sqrt(vec1.reduce((sum, v) => sum + v * v, 0));
-    const mag2 = Math.sqrt(vec2.reduce((sum, v) => sum + v * v, 0));
-    return dotProduct / (mag1 * mag2);
-  }
-
-
-
-
-messages: ChatCompletionMessageParam[] = [
- 
-  {
-    role: 'assistant',
-    content: 'Hello, I am your AI chat assistant',
-  },
-  {
-    role: 'assistant',
-    content: 'How can I help you today?',
-  },
-];
-async searchForRelevantInformation(query: string): Promise<string | number[] | null> {
-  // Search in the in-memory schools list first
-  const normalizedQuery = query.toLowerCase();
-  const relevantSchool = this.schools?.find((school: {
-    tel: any;
-    website: any;
-    email: any;
-    abbreviation: string;
-    fullName: string;
-    address: string; 
-  }) => 
-    (school.abbreviation?.toLowerCase().includes(normalizedQuery)) ||
-    (school.fullName?.toLowerCase().includes(normalizedQuery)) ||
-    (school.address?.toLowerCase().includes(normalizedQuery)) ||
-    (typeof school.website === 'string' && school.website.toLowerCase().includes(normalizedQuery)) ||
-    (typeof school.email === 'string' && school.email.toLowerCase().includes(normalizedQuery))
-  );
-
-  console.log(relevantSchool);
-
-  if (relevantSchool) {
-    // If relevant school is found, return the school name (or any other string you'd like)
-    return relevantSchool.fullName;  // You can choose a different property like abbreviation, address, etc.
-  } else {
-    const embeddings = new OpenAIEmbeddings({
-      openAIApiKey: environment.openaiApiKey,
-    });
-    
-    const queryEmbedding = await embeddings.embedQuery(query);
-    const mostRelevantDoc = await this.searchEmbeddingsInDB(queryEmbedding);
-
-    // Return the embedding or null if no document is found
-    return mostRelevantDoc?.metadata?.['embedding'] || null;
-  }
-}
-
-
-async searchEmbeddingsInDB(queryEmbedding: number[]): Promise<SchoolDocument | null> {
-  const dbName = 'school_embeddings_db';
-  const storeName = 'embeddings';
-
-  return new Promise<SchoolDocument | null>((resolve, reject) => {
-    const request = indexedDB.open(dbName, 2); // Open the DB with version 2
-
-    let db: IDBDatabase;
-
-    request.onupgradeneeded = (event) => {
-      const db = (event.target as IDBRequest).result;
-      if (!db.objectStoreNames.contains(storeName)) {
-        db.createObjectStore(storeName, { keyPath: 'id' });
-      }
-    };
-
-    request.onsuccess = (event) => {
-      const dbRequest = event.target as IDBRequest;
-      db = dbRequest.result;
-
-      const transaction = db.transaction([storeName], 'readonly');
-      const store = transaction.objectStore(storeName);
-      
-      const allDocsRequest = store.getAll();
-
-      allDocsRequest.onsuccess = () => {
-        const allDocs = allDocsRequest.result;
-        let mostRelevantDoc: SchoolDocument | null = null;
-        let highestSimilarity = -1;
-
-        allDocs.forEach((doc: SchoolDocument) => {
-          const similarity = this.cosineSimilarity(queryEmbedding, doc.metadata['embedding']);
-          if (similarity > highestSimilarity) {
-            highestSimilarity = similarity;
-            mostRelevantDoc = doc;
-          }
-        });
-
-        // Return the most relevant document with school data
-        if (mostRelevantDoc) {
-          resolve(mostRelevantDoc);
-        } else {
-          resolve(null);
-        }
-      };
-
-      allDocsRequest.onerror = (error) => {
-        console.error('Error fetching documents from IndexedDB:', error);
-        reject('Error fetching documents');
-      };
-    };
-
-    request.onerror = (event) => {
-      console.error('Error opening IndexedDB:', event);
-      reject('Error opening IndexedDB');
-    };
-  });
-}
-
-
-
-
+institutions: any[] = []
+programType = ['Degree awarding institutions', 'NCE', 'ND', 'NID'];
+institutionTypes: any[] = []
 
 async sendMessage() {
-  if (!this.message.trim()) return;
+  if (!this.message) return;
 
-  this.messages.push({ content: this.message, role: 'user' });
-  // this.message = ''; 
-  this.typing = true;
+  // Add user's message
+  this.messages.push({ role: 'user', content: this.message });
 
-  try {
-    let responseContent = await this.searchForRelevantInformation(this.message);
-    console.log(responseContent)
+  if(this.message === 'exit' ){
+    this.conversationState = 'exit'
+  }
+  // Handle the conversation state
+  switch (this.conversationState) {
+    case 'welcome':
+      this.handleWelcome();
+      break;
 
-    const systemMessage: ChatCompletionMessageParam = {
-      role: 'system',
-      content: `You are an AI chatbot specializing in answering questions about schools based on provided information. here is the knowledge base: ${JSON.stringify(responseContent)}, When answering a query:
-1. If the query does not match exactly but is similar to an entry in the knowledge base, suggest the closest match. For example, say: "Did you mean [closest match]?".
-2. If there is no close match in the knowledge base, respond with: "Sorry, I do not have an answer to the question you asked. Could you please rephrase your query for better assistance?"
-3. Always prioritize clarity and relevance in your response.`,
-    };
-    console.log(systemMessage)
+    case 'programType':
+      await this.handleProgramType();
+      break;
+
+    case 'institution':
+      await this.handleInstitution();
+      break;
+
+    case 'waec':
+      await this.handleWaecResult();
+      break;
+
+    case 'recommendation':
+      await this.showRecommendations();
+      break;
+
+    case 'exit':
+      this.exitChat();
+      break;
+    default:
+      this.messages.push({ role: 'assistant', content: 'An unexpected error occurred.' });
+  }
+  // Clear user input
+  this.message = '';
+  this.scrollToBottom(); 
+
+}
+
+// Handle the 'welcome' state
+handleWelcome() {
+  this.messages.push({
+    role: 'assistant',
+    content: `Welcome! ${this.message.toLocaleUpperCase()}, Let’s find the best institution and course for you. <br> Please select a program type by entering the number corresponding to your choice:`
+  });
+
+  this.messages.push({
+    role: 'assistant',
+    content: this.programType.map((inst, index) => `${index + 1}. ${inst}`).join('<br>')
+  });
+
+  this.conversationState = 'programType';
+}
+
+// Handle the 'programType' state
+async handleProgramType() {
+  const selectedProgram = parseInt(this.message) - 1;
+
+  if (selectedProgram >= 0 && selectedProgram < this.programType.length) {
+    this.userResponses.programType = selectedProgram;
+
+    this.messages.push({
+      role: 'assistant',
+      content: `You selected ${this.programType[selectedProgram]}. Please choose an institution type from the options below by entering the number corresponding to your choice:`
+    });
+
+    const availableInstitutionTypes = Object.values(this.institutionTypes[selectedProgram]).flat();
+
+    this.messages.push({
+      role: 'assistant',
+      content: availableInstitutionTypes.map((child, index) => `${index + 1}: ${child}`).join('<br>')
+    });
+
+    this.conversationState = 'institution';
+  } else {
+    this.messages.push({ role: 'assistant', content: 'Invalid choice. Please select a valid program type.' });
+  }
+}
+
+// Handle the 'institution' state
+async handleInstitution() {
+  const selectedInstitute = parseInt(this.message) - 1;
+
+  if (selectedInstitute >= 0) {
+    this.userResponses.institutionType = selectedInstitute;
+
+    const institutionList: any = Object.values(this.institutionTypes[this.userResponses.programType])[0];
+
+    this.messages.push({
+      role: 'assistant',
+      content: `You selected ${institutionList[selectedInstitute]}.`
+    });
+
+    this.messages.push({
+      role: 'assistant',
+      content: 'Please enter your WAEC result in the following format:<br> - Use subject names followed by a colon and the grade.<br> - Separate each subject-grade pair with a comma.<br>Example:<br> English: A1,<br> Mathematics: B2,<br> Physics: C4,<br> etc.'
+    });
+
+    this.conversationState = 'waec';
+  } else {
+    this.messages.push({ role: 'assistant', content: 'Invalid choice. Please select a valid institution from the list above.' });
+  }
+}
+
+// Handle the 'waec' state
+async handleWaecResult() {
+  const result = this.message.trim();
+
+  if (result.length > 0) {
+    this.userResponses.waecResults = result;
+
+    this.messages.push({
+      role: 'assistant',
+      content: `Please wait while I process your information...`
+    });
+
+    const choice = this.schools[this.userResponses.programType].children[this.userResponses.institutionType];
+
+    for (const child of choice.children) {
+      const data = await this.ragService.getInstitutionChild(child.id).toPromise();
+      this.institutions.push(...data);
+    }
+
+    this.userResponses.knowledgeBase = this.institutions;
+    this.conversationState = 'recommendation';
+
+  this.message = '';
+
+    await this.showRecommendations();
+
+
+  } else {
+    this.messages.push({
+      role: 'assistant',
+      content: `Invalid. Please follow the example format given above.`
+    });
+  }
+}
+
+exitChat() {
+  // Reset to 'programType' state
+  this.conversationState = 'programType';
+  this.messages = [];
+  this.message = '';
+  this.userResponses = {
+    programType: null,
+    institutionType: null,
+    waecResults: null,
+    knowledgeBase: null,
+  };
+
+  // Restart the program type selection
+  this.handleWelcome();
+}
+   ngOnInit() {
+    try {
+      this.ragService.getBrochure().subscribe(
+        async (data) => {
+          this.schools = data;
+          // console.log('Schools loaded:', this.schools);
+            this.schools.map((school: { name: string, children: any; }) => {
+              const schoolChildren = school.children.map((child: any) => child.name)
+                this.institutionTypes.push({ [school.name]: schoolChildren})
+              
+            })
+            // console.log(this.institutionTypes)
+        }
+      );
+
+      // console.log(this.institutions)
+      // console.log(this.children)
+
+    } catch (error) {
+      console.error("Error processing the PDF:", error);
+    }
+
+ 
+
+  }
+
+ checkEligibility(userResults: { [x: string]: string; }, courses: any[]) {
+    return courses.filter(course => {
+      const requiredSubjects = course.utme_requirements;
+      const userGradesMatch = requiredSubjects.every((subject: string | number) => {
+        return userResults[subject] && userResults[subject].match(/[A-B]/);  // Check if user has passed
+      });
+      return userGradesMatch;
+    });
+  }
+  
+
+  messages: ChatCompletionMessageParam[] = [
+ 
+    {
+      role: 'assistant',
+      content: 'Hello, I am your JAMB advisor assistant',
+    },
+    {
+      role: 'assistant',
+      content: 'What can i call you?',
+    },
+  ];
+
+async fetchCourses(selectedSchool: any) {
+    selectedSchool.children.forEach(async (child: any) => {
+      this.http.get<any[]>(`https://cors-anywhere.herokuapp.com/https://ibass.jamb.gov.ng/assets/content/courses-by-institution/${child.id}.json`).subscribe(
+        async (data) => {
+          // console.log(data)
+         await this.institutions.push(...data);
+        }
+      );
+    });
+// console.log(this.institutions)
+  this.userResponses.knowledgeBase = this.institutions
+  // console.log(this.userResponses.knowledgeBase);
+
+  }
+  
+  // Show the final recommendations based on user responses
+  async showRecommendations() {
+   
+    try {
+      // Log WAEC results and knowledge base
+      // console.log('WAEC Results:', this.userResponses.waecResults);
+      // console.log('Knowledge Base:', this.institutions);
+  
+      // Construct the system message dynamically
+      const systemMessage: ChatCompletionMessageParam = {
+        role: 'system',
+        content: this.constructSystemMessage(),
+      };
+  
+      // Call OpenAI API
       const openAIResponse = await this.openai.chat.completions.create({
-        model: 'gpt-4o',
-        temperature: 0.7,
-        max_tokens: 50,
+        model: 'gpt-4',
+        temperature: 0.8,
+        max_tokens: 700,
         messages: [systemMessage, ...this.messages],
       });
-      responseContent = openAIResponse.choices[0]?.message?.content ;
-    
-
-    this.messages.push({ content: responseContent, role: 'assistant' });
-  } catch (error) {
-    console.error('Error processing the query:', error);
-    this.messages.push({ content: 'An error occurred while processing your request.', role: 'assistant' });
-  } finally {
-    this.typing = false;
+  
+      // Extract response content
+      const responseContent = openAIResponse.choices[0]?.message?.content;
+  
+      if (!responseContent) {
+        throw new Error('No response from OpenAI API');
+      }
+  
+      // Log and push assistant's response
+      // console.log('OpenAI Response:', responseContent);
+      this.messages.push({ content: responseContent, role: 'assistant' });
+    } catch (error) {
+      console.error('Error in showRecommendations:', error);
+      this.messages.push({
+        role: 'assistant',
+        content: 'An error occurred while generating recommendations. Please try again.',
+      });
+    }
   }
+  
+  // Helper function to construct the system message
+  constructSystemMessage(): string {
+    return `You are an AI chatbot specializing in providing courses and schools recommendations based on the knowledge base and WAEC results provided. 
+When creating responses:
+1. Organize recommendations into an HTML ordered list.
+2. Use proper line breaks (<br>) to separate information.
+3. Include clickable hyperlinks for courses and institutions.
+4. Use bold text to highlight key parts like "Course Name," "Institution," and section headers (e.g., "Direct Entry Requirements").
+5. Break down requirements (like UTME and Direct Entry) into simple, clear bullet points (<ul><li>...</li></ul>) for easy readability.
+3. Always ensure the response is visually scannable and user-friendly.
+Here is the knowledge base: ${JSON.stringify(this.institutions)}. Here is the WAEC result: ${JSON.stringify(this.userResponses.waecResults)}.
+Provide recommendations based on the above data.`;
+  }
+  
+
+  scrollToBottom() {
+    setTimeout(() => {
+      this.messagesContainer.nativeElement.scrollTop = this.messagesContainer.nativeElement.scrollHeight;
+    }, 0);
+  }
+ 
 }
 
 
 
  
-}

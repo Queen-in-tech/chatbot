@@ -865,3 +865,233 @@
     
     
 ]
+
+
+ [
+  {
+    "course": "Accounting",
+    "degree_awarding_institutions": [
+      "AAUA", "ABSU","ABU","ABU-ODL","ABUJA","ADUN", "AL-ANSAR",
+      "APU",
+      "ASPOL-DEG",
+      "ASHIPOLY-DEG",
+      "ALETHEIA",
+      "AMOU",
+      "AUN",
+      "AUST",
+      "AVE-MARIA",
+      "AZMAN",
+      "BASU",
+      "BOUEDST",
+      "BSU",
+      "CANADIAN-UNI",
+      "CARITAS",
+      "CCU",
+      "COOU",
+      "COSMOPOLITAN",
+      "CRUTECH",
+      "CUN",
+      "CUST",
+      "DELSUT",
+      "DOU",
+      "EBSU",
+      "EKSU",
+      "EL-AMIN",
+      "ELIZADE",
+      "FEDPOBID-DEG",
+      "KOMU",
+      "EVANGEL",
+      "FED-DUTSINMA",
+      "FED-KASHERE",
+      "FED-LAFIA",
+      "FED-LOKOJA",
+      "FED-OYE EKITI",
+      "FED-WUKARI",
+      "HAVILLA",
+      "HENSARD",
+      "HUSTECH",
+      "HUDA",
+      "IBADAN",
+      "ICONIC-OU",
+      "IGBINEDION",
+      "IMSU",
+      "ISTIQAMA",
+      "JEWEL",
+      "JOS",
+      "KASU-KABBA",
+      "KKU",
+      "KWARARAFA",
+      "LAGOS",
+      "LASU",
+      "LASUED",
+      "LASUSTECH",
+      "LCITY",
+      "MADUKA",
+      "MADONNA",
+      "MAIDUGURI",
+      "MAAUN",
+      "MARANATHA",
+      "MAUTY",
+      "MCPHERSON",
+      "MEWAR",
+      "MK-UNI",
+      "MKAR",
+      "MUDIAME",
+      "NASARAWA",
+      "NBU",
+      "NEWGATE",
+      "NTNU",
+      "OAU",
+      "PEACELAND UNI",
+      "PHC",
+      "PHOENIX",
+      "PHILOMATH",
+      "PRIME-UNI",
+      "PLASU",
+      "RSU",
+      "SAM-MARIS",
+      "SAU",
+      "TAU",
+      "TASUED",
+      "UAGRIC-IMO",
+      "UDA",
+      "UDU",
+      "UNI-ILESA",
+      "UNIOSUN",
+      "UNIZIK",
+      "UNN",
+      "UNINIGER",
+      "uoo",
+      "UYO",
+      "VISION-UNI",
+      "WELLSPRING",
+      "WESTERN-DEL"
+    ],
+    "requirements": {
+      "direct_entry": "Two (2) ‘A’ Level passes chosen from Economics, Accounting, Business Management, Government and Geography",
+      "utme": "Five (5) SSC credit passes including English Language, Mathematics, Economics and any other two (2) other subjects. For NBC holders, the other two (2) relevant subjects could be from any of Principles of Accounts, Commerce, Office Practice and Secretarial Duties.",
+      "utme_subjects": "Mathematics, Economics plus any Social Science subject."
+    },
+   "special_considerations": [
+  {
+    "institution": "ABU",
+    "details": "Accepts Two (2) A level/IJMB passes in Economics and Management & a minimum Merit pass in ABU Diploma in Accounting, Banking, Management, Islamic Banking or Insurance."
+  },
+  {
+    "institution": "ABSU",
+    "details": "Accepts holders of the following qualifications: a) Complete pass in the Intermediate ICAN Examination or equivalents; and b) Pass in final exams of the Chartered Institute of Secretaries (except UYO and DELSU) plus UTME requirements."
+  },
+  {
+    "institution": "ABUJA",
+    "details": "Accepts 'A' Level pass in Geology."
+  },
+  {
+    "institution": "ADSU, UNIZIK, ABSU, MADONNA and COOU",
+    "details": "Accept ND/NCE in the relevant fields. UNIZIK and ABSU also accept HND. UNIZIK and COOU accept ND/HND lower credit pass."
+  },
+  {
+    "institution": "AUN",
+    "details": "Same as in Finance."
+  },
+  {
+    "institution": "BSU",
+    "details": "Accepts ND/NCE lower credit/merit plus five (5) 'O' Level subjects requirements to include Economics at one (1) sitting."
+  },
+  {
+    "institution": "COOU",
+    "details": "Accepts ND/HND lower credit or equivalent in relevant programmes."
+  },
+  {
+    "institution": "EBSU",
+    "details": "Accepts a) NCE/ND with passes at Merit/Credit level in relevant programmes. b) AAT, Intermediate ACCA or ICAN or ATS final certificate provided such candidate possesses ‘O’ Level credit passes in English Language, Economics, and Mathematics."
+  },
+  {
+    "institution": "EKSU, DELSU and UYO",
+    "details": "Accept ND/HND in relevant programmes not below upper credit level. EKSU insists on 'A' level passes in Economics but does not accept IJMB."
+  },
+  {
+    "institution": "ESUTECH",
+    "details": "Accepts ND in relevant programmes within the Faculty into 200 Level in addition to the UTME requirements."
+  },
+  {
+    "institution": "EVANGEL",
+    "details": "Requires two (2) ‘A’ Level passes to include Economics or ND/NCE in addition to the UTME requirements."
+  },
+  {
+    "institution": "FED-DUTSINMA",
+    "details": "Accepts Two ‘A’ level passes in Economics/Financial Accounting and Mathematics or any of Social/Management Sciences subject. ND/NCE with good grades in Accounting or any related courses from a recognized institution."
+  },
+  {
+    "institution": "IGBINEDION",
+    "details": "Accepts ND at credit level in related programmes."
+  },
+  {
+    "institution": "IMSU and PHC",
+    "details": "No Direct Entry."
+  },
+  {
+    "institution": "JOS",
+    "details": "Accepts a) passes at IJMB in at least two (2) subjects one (1) of which must be in Accounting, Economics or Business Management. b) ND upper credit in Financial studies."
+  },
+  {
+    "institution": "LAGOS",
+    "details": "Accepts very good passes in three (3) JUPEB subjects: Economics and any two (2) of Financial Accounting, Business Management, Government and Geography."
+  },
+  {
+    "institution": "MCPHERSON",
+    "details": "Accepts NCE with passes at merit level in relevant subjects, foundation of professional examinations such as ICAN, ACCA, ICMA or ND upper credit in relevant programmes."
+  },
+  {
+    "institution": "NASARAWA",
+    "details": "Accepts ND/HND lower credit in relevant programmes; IJMB in relevant subjects not below ten (10) points; NCE credit/merit in Business Education."
+  },
+  {
+    "institution": "OAU",
+    "details": "Accepts a) ND upper credit in Accounting, also ICAN/ACCA examination at professional level or ATS (Stage III) examination of ICAN. b) Advanced Level passes in Economics, Accounting, Business Management, plus Government and Geography or ICAN/ATS I, II and III."
+  },
+  {
+    "institution": "PLASU",
+    "details": "Accepts a) degree in any programme provided the candidate meets the 'O' Level requirements. b) HND lower credit in relevant programmes with 'O' Level requirements. c) ND lower credit in relevant programmes with 'O' Level requirements. d) IJMB minimum of 7 points with passes in relevant subjects, with 'O' Level requirements. e) Does not accept University Diplomas and other Diplomas not accredited by the relevant accrediting bodies."
+  },
+  {
+    "institution": "RSU",
+    "details": "Accepts: a) OND/ND (Upper Credit) relevant to the discipline. b) HND (Lower Credit) relevant to the programme. c) Degree (Third Class) relevant to the programme. d) At least two (2) 'A' level passes at GCE preferably in the Arts and Social Sciences."
+  },
+  {
+    "institution": "UDU",
+    "details": "Accepts a) ‘O’ Level credit in Accounts In lieu of Economics. b) ND in relevant programmes not below lower credit. c) NCE (Business Education)."
+  },
+  {
+    "institution": "UNIZIK",
+    "details": "Does not accept Government or Geography. All Direct Entry candidates must satisfy the UTME requirements. Requires at least two (2) ‘A’ Level passes to include Accounting or Economics. UNIZIK and ESUTECH require that Direct Entry applicants possess UTME requirements."
+  },
+  {
+    "institution": "UNN",
+    "details": "Accepts in addition to the UTME requirements a) HND/ND/NCE in relevant programmes. b) Complete pass in Intermediate ICAN examination or equivalents. c) Pass in the final exams of the Chartered Institute of Secretaries."
+  },
+  {
+    "institution": "UYO",
+    "details": "Accepts ND/HND lower credit in relevant programmes. All Direct Entry candidates must satisfy the UTME requirements."
+  }
+]
+  },
+  {
+    "course": "ACCOUNTING AND FINANCE",
+    "degree_awarding_institutions": [
+      "BCU"
+    ],
+    "requirements": {
+      "direct_entry": "Two (2) ‘A’ Level passes chosen from Economics, Accounting, Business Management, Government and Geography",
+      "utme": "Five (5) SSC credit passes including English Language, Mathematics, Economics and any other two (2) other subjects. For NBC holders, the other two (2) relevant subjects could be from any of Principles of Accounts, Commerce, Office Practice and Secretarial Duties.",
+      "utme_subjects": "Mathematics, Economics plus any Social Science subject."
+    },
+    "special_considerations": [
+      {
+        "institution": "LASU",
+        "details": "Accepts ND with merit in relevant fields."
+      }
+    ],
+    "remarks": ""
+  }
+]
+
