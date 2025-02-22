@@ -34,7 +34,7 @@ jobs:
         ng build --configuration production
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@latest
       with:
         name: build-artifacts
         path: ./dist/sabletech  # Replace with your actual build directory
