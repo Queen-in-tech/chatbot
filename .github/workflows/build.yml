@@ -41,6 +41,8 @@ jobs:
 
     - name: Deploy to Netlify
       uses: nwtgck/actions-netlify@v3.0
+      with:
+        publish-dir: './dist/sabletech'
       env:
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}  
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} 
