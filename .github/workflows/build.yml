@@ -19,9 +19,15 @@ jobs:
         node-version: '16'
 
     - name: Install dependencies
-      run: npm install
+      run: |
+        npm install
+        npm install -g @angular/cli  # Install Angular CLI globally
+
+    - name: Inject OpenAI API Key
+      run: |
+        echo "Injecting OpenAI API Key into environment.prod.ts"
+        sed -i 's/openaiApiKey: .*/openaiApiKey: \"${{ secrets.openaiApiKey }}\"/' src/environments/environment.prod.ts
 
     - name: Build Angular app
       run: |
-        echo "openaiApiKey=${{ secrets.openaiApiKey }}" >> $GITHUB_ENV
         ng build --prod
