@@ -37,12 +37,12 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: build-artifacts
-        path: ./dist/sabletech  # Replace with your actual build directory
+        path: ./dist/sabletech/browser  # Replace with your actual build directory
 
     - name: Deploy to Netlify
       uses: nwtgck/actions-netlify@v3.0
       with:
-        publish-dir: './dist/sabletech'
+        publish-dir: './dist/sabletech/browser'
       env:
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}  
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} 
