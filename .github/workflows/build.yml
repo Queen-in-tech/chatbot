@@ -21,6 +21,9 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
+
     - name: Inject OpenAI API Key
       run: |
         echo "Injecting OpenAI API Key into environment.prod.ts"
