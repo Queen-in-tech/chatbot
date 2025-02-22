@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Deploy to Netlify
 
 on:
   push:
@@ -19,15 +19,14 @@ jobs:
         node-version: '18'
 
     - name: Install dependencies
-      run: |
-        npm install
-        npm install -g @angular/cli  # Install Angular CLI globally
-
-    - name: Inject OpenAI API Key
-      run: |
-        echo "Injecting OpenAI API Key into environment.prod.ts"
-        sed -i 's/openaiApiKey: .*/openaiApiKey: \"${{ secrets.openaiApiKey }}\"/' src/environments/environment.prod.ts
+      run: npm install
 
     - name: Build Angular app
-      run: |
-        ng build --prod
+      run: ng build --configuration production
+
+    - name: Deploy to Netlify
+      uses: nwtgck/actions-netlify@v1
+      with:
+        site_id: ${{ secrets.NETLIFY_SITE_ID }}
+        auth_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        build_dir: dist/
