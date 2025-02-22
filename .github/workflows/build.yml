@@ -31,11 +31,16 @@ jobs:
 
     - name: Build Angular app
       run: |
-        ng build --configuration production
+        ng build --configuration production 
 
     - name: Deploy to Netlify
-      uses: nwtgck/actions-netlify@v1
+      uses: actions/upload-artifact@v3
       with:
-        netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
-        netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        publish-dir: dist/
+        name: build-artifacts
+        path: ./build
+
+    - name: Netlify Deploy
+      uses: netlify/actions/deploy@v1
+      env:
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}  
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} 
