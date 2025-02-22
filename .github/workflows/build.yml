@@ -31,16 +31,17 @@ jobs:
 
     - name: Build Angular app
       run: |
-        ng build --configuration production 
+        ng build --configuration production
 
-    - name: Deploy to Netlify
+    - name: Upload build artifacts
       uses: actions/upload-artifact@v3
       with:
         name: build-artifacts
-        path: ./build
+        path: ./dist/sabletech  # Replace with your actual build directory
 
-    - name: Netlify Deploy
-      uses: netlify/actions/deploy@v1
-      env:
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}  
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} 
+    - name: Deploy to Netlify
+      uses: nwtgck/actions-netlify@v1
+      with:
+        site_id: ${{ secrets.NETLIFY_SITE_ID }}
+        auth_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        build_dir: ./dist/sabletech  # Ensure this matches the output folder of Angular
